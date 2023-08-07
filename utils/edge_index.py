@@ -8,7 +8,7 @@ class EdgeIndex:
         self.nnode = len(g) # int
         edges = g.edges(data = True)
         edges = list(filter(lambda x: 'weight' in x[2] or 'spatial_weight' in x[2], edges)) # [(u_nodeid, v_nodeid, dict), (), ..]
-        self.edges = np.array(list(map(lambda x: (seg_id_to_idx[x[0]], seg_id_to_idx[x[1]]), edges)), np.long) # [num_edges, 2], np.array
+        self.edges = np.array(list(map(lambda x: (seg_id_to_idx[x[0]], seg_id_to_idx[x[1]]), edges)), np.longlong) # [num_edges, 2], np.array
         self.tweight = np.array( list(map(lambda x: x[2].get('weight', 0), edges)) ) # topo_weight [num_edges], np.array
         self.sweight = np.array( list(map(lambda x: x[2].get('spatial_weight', 0), edges)) ) # spatial_weight [num_edges], np.array
 
@@ -60,7 +60,7 @@ class EdgeIndex:
             idx1_to_newidx[v] = i
 
         sub_edge_index = [(idx1_to_newidx[i], idx1_to_newidx[j]) for (i,j) in sub_edge_index]
-        sub_edge_index = np.array(sub_edge_index, np.long).T
+        sub_edge_index = np.array(sub_edge_index, np.longlong).T
         new_x_idx = idx1
         mapping_to_origin_idx = [idx1_to_newidx[_i] for _i in sub_idx]
         
