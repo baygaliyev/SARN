@@ -14,11 +14,11 @@ class FeatEmbedding(nn.Module):
                         nwayid_code, nsegid_code, nhighway_code, nlength_code, \
                         nradian_code, nlon_code, nlat_code))
         
-        self.emb_highway = nn.Embedding(nhighway_code, Config.sarn_seg_feat_highwaycode_dim)
-        self.emb_length = nn.Embedding(nlength_code, Config.sarn_seg_feat_lengthcode_dim)
-        self.emb_radian = nn.Embedding(nradian_code, Config.sarn_seg_feat_radiancode_dim)
-        self.emb_lon = nn.Embedding(nlon_code, Config.sarn_seg_feat_lonlatcode_dim)
-        self.emb_lat = nn.Embedding(nlat_code, Config.sarn_seg_feat_lonlatcode_dim)
+        self.emb_highway = nn.Embedding(nhighway_code, Config.sarn_seg_feat_highwaycode_dim) #16
+        self.emb_length = nn.Embedding(nlength_code, Config.sarn_seg_feat_lengthcode_dim)    #16
+        self.emb_radian = nn.Embedding(nradian_code, Config.sarn_seg_feat_radiancode_dim)    #16
+        self.emb_lon = nn.Embedding(nlon_code, Config.sarn_seg_feat_lonlatcode_dim)          #32
+        self.emb_lat = nn.Embedding(nlat_code, Config.sarn_seg_feat_lonlatcode_dim)          #32
 
     # inputs = [N, nfeat]
     def forward(self, inputs):
