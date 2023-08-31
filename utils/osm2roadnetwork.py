@@ -438,13 +438,13 @@ def output_cell_files_new(cell_file):
 
 # output data files
 def output_dataset_files(output_file_name_prefix):
-    node_file = output_file_name_prefix + '_node'
+    node_file = output_file_name_prefix.replace(".xml", "") + '_node'
 
-    segment_file = output_file_name_prefix + '_segment'
-    way_file = output_file_name_prefix + '_way'
-    adj_segment_file = output_file_name_prefix + '_adjsegment'
+    segment_file = output_file_name_prefix.replace(".xml", "") + '_segment'
+    way_file = output_file_name_prefix.replace(".xml", "") + '_way'
+    adj_segment_file = output_file_name_prefix.replace(".xml", "") + '_adjsegment'
 
-    cell_file = output_file_name_prefix + '_cell'
+    cell_file = output_file_name_prefix.replace(".xml", "") + '_cell'
 
     output_node_files(node_file)
 
