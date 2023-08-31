@@ -485,8 +485,10 @@ if __name__ == "__main__":
     ___ring_ranges = [kv[1] for kv in rings_ranges.items() if name == kv[0]]
     assert len(___ring_ranges) == 1
     ring_ranges = ___ring_ranges[0]
-
-    ___lonlat_unit = [kv[1] for kv in lonlat_units.items() if sys.argv[1].split('/')[-1] == kv[0]]
+    
+    name = sys.argv[1].split('/')[-1]
+    name = name.replace(".xml", "")
+    ___lonlat_unit = [kv[1] for kv in lonlat_units.items() if name == kv[0]]
     lonlat_unit = ___lonlat_unit[0]
     lon_unit = lonlat_unit['lon_unit']
     lat_unit = lonlat_unit['lat_unit']
