@@ -480,6 +480,7 @@ if __name__ == "__main__":
     # load area range
     print(rings_ranges)
     ___ring_ranges = [kv[1] for kv in rings_ranges.items() if sys.argv[1].split('/')[-1] == kv[0]]
+    print(___ring_ranges)
     assert len(___ring_ranges) == 1
     ring_ranges = ___ring_ranges[0]
 
