@@ -54,12 +54,15 @@ rings_ranges = {
             'lon_lo': 116.3401000, 'lon_hi': 116.4425000},
     'OSM_SanFrancisco_downtown_raw': {'lat_lo': 37.7617000, 'lat_hi': 37.8131000, \
             'lon_lo': -122.4450000, 'lon_hi': -122.3803000},
+    'OSM_Pisa_raw': {'lat_lo': 43.6061000, 'lat_hi': 43.7396000, \
+            'lon_lo': 10.2683000, 'lon_hi': 10.4531000},
 }
 
 lonlat_units = {
     'OSM_Chengdu_2thRings_raw': {'lon_unit': 0.010507143, 'lat_unit': 0.008982567},
     'OSM_Beijing_2thRings_raw': {'lon_unit': 0.01172332943, 'lat_unit': 0.00899280575},
-    'OSM_SanFrancisco_downtown_raw': {'lon_unit': 0.00568828214, 'lat_unit': 0.004496402877}
+    'OSM_SanFrancisco_downtown_raw': {'lon_unit': 0.00568828214, 'lat_unit': 0.004496402877},
+    'OSM_Pisa_raw': {'lon_unit': 0.01335000000, 'lat_unit': 0.0184800000}
 } # what is this?
 
 lon_unit = 0.0
