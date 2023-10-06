@@ -262,6 +262,7 @@ class SARN(BaseEncoder):
                 embs = torch.cat((embs, emb), 0)
 
             embs = F.normalize(embs, dim = 1) # dim=0 feature norm, dim=1 obj norm
+            print(embs.head())
             return embs
         return None
 
