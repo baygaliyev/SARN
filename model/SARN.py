@@ -260,8 +260,11 @@ class SARN(BaseEncoder):
                 emb = self.model.encoder_q(sub_seg_feats_1, sub_edge_index_1)
                 emb = emb[mapping_to_origin_idx_1]
                 embs = torch.cat((embs, emb), 0)
-
+            
+            print("batch of embeddings")
+            print(emb.head())
             embs = F.normalize(embs, dim = 1) # dim=0 feature norm, dim=1 obj norm
+            print("final embeddings")
             print(embs.head())
             return embs
         return None
