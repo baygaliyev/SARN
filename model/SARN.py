@@ -261,11 +261,11 @@ class SARN(BaseEncoder):
                 emb = emb[mapping_to_origin_idx_1]
                 embs = torch.cat((embs, emb), 0)
             
-            print("batch of embeddings")
-            print(emb.head())
+            print("batch of embeddings") # debug
+            print(emb.head())    # debug
             embs = F.normalize(embs, dim = 1) # dim=0 feature norm, dim=1 obj norm
-            print("final embeddings")
-            print(embs.head())
+            print("final embeddings") # debug
+            print(embs.head()) # debug
             return embs
         return None
 
