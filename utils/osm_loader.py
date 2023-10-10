@@ -157,7 +157,7 @@ class OSMLoader:
             self.seg_id_to_idx_in_adj_seg_graph[_id] = _idx
             self.seg_idx_to_id_in_adj_seg_graph[_idx] = _id
 
-        logging.debug(seg_id_to_idx_in_adj_seg_graph)    # debug
+        logging.debug(self.seg_id_to_idx_in_adj_seg_graph)    # debug
 
         self.edge_index = EdgeIndex(self.adj_segments_graph, self.seg_id_to_idx_in_adj_seg_graph)
 
