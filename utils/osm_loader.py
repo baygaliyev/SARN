@@ -160,6 +160,7 @@ class OSMLoader:
         self.edge_index = EdgeIndex(self.adj_segments_graph, self.seg_id_to_idx_in_adj_seg_graph)
 
         logging.info(self.seg_id_to_idx_in_adj_seg_graph)    # debug
+        logging.info(len(self.seg_id_to_idx_in_adj_seg_graph))    # debug
 
         # segment features
         # self.seg_feats has dependency on self.segid_in_adj_segments_graph
