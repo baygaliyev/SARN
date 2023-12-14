@@ -144,7 +144,7 @@ class OSMLoader:
                         len(self.adj_segments_graph), self.adj_segments_graph.number_of_edges()))
         
         if self.schema == 'SARN':
-            # 1. create distance-and-radian weighted segment graph. (dont add to many edge attributes)
+            # 1. create distance-and-radian weighted segment graph. (do not add too many edge attributes)
             # 2. combine edge atrributes of spatial_segments_graph into self.adj_segments_graph
             spatial_segments_graph = self.__create_spatial_weighted_seg_graph()
             self.adj_segments_graph.add_edges_from(spatial_segments_graph.edges(data=True))
