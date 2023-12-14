@@ -61,7 +61,8 @@ class OSMLoader:
 
         #======== basis for all =========
         self.nodes = pd.read_csv(self.node_file, delimiter = ',', index_col = 'node_id')
-        
+
+        # road segments dataset (to add additional features)
         self.segments = pd.read_csv(self.segment_file, delimiter = ',', index_col = ['s_id','e_id'])
         self.segments.way_ids = self.segments.way_ids.apply(literal_eval)
         
@@ -199,6 +200,7 @@ class OSMLoader:
                         self.cellspace.lon_max, self.cellspace.lat_max)
 
         all_cell_pairs = cs.all_neighbour_cell_pairs_permutated() # all legal neighbouring cell pairs
+        # a copy of road segments with attributes chosen
         segs = self.segments[['inc_id','c_lon','c_lat','radian']].copy()
         segs.loc[:, 'c_cellid_tmp'] = segs.loc[:,['c_lon','c_lat']].apply(lambda x: cs.get_cell_id_by_point(*x), axis=1)
 
