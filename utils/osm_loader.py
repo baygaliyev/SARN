@@ -63,6 +63,7 @@ class OSMLoader:
         self.nodes = pd.read_csv(self.node_file, delimiter = ',', index_col = 'node_id')
 
         # road segments dataset (to add additional features)
+        # s_id, e_id, s_lon, s_lat, e_lon, e_lat, c_lon, c_lat,length, radian, highway_cls, way_ids, bridge, maxspeed,lanes, inc_id
         self.segments = pd.read_csv(self.segment_file, delimiter = ',', index_col = ['s_id','e_id'])
         self.segments.way_ids = self.segments.way_ids.apply(literal_eval)
         
