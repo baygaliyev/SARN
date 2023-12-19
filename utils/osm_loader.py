@@ -201,6 +201,7 @@ class OSMLoader:
 
         all_cell_pairs = cs.all_neighbour_cell_pairs_permutated() # all legal neighbouring cell pairs
         # a copy of road segments with attributes chosen
+        # 4 SEGMENT FEATURES CHOSEN
         segs = self.segments[['inc_id','c_lon','c_lat','radian']].copy()
         segs.loc[:, 'c_cellid_tmp'] = segs.loc[:,['c_lon','c_lat']].apply(lambda x: cs.get_cell_id_by_point(*x), axis=1)
 
@@ -211,6 +212,7 @@ class OSMLoader:
             segs_in_cell_1 = segs[segs['c_cellid_tmp'] == cell_id_1]
             segs_in_cell_2 = segs[segs['c_cellid_tmp'] == cell_id_2]
 
+            # 4 SEGMENT FEATURES CHOSEN
             segs_pairs = segs_in_cell_1[['inc_id','c_lon','c_lat','radian']].merge(segs_in_cell_2[['inc_id','c_lon','c_lat','radian']], how='cross')
             segs_pairs['distance'] = haversine_np(segs_pairs['c_lon_x'].values, segs_pairs['c_lat_x'].values, \
                                                     segs_pairs['c_lon_y'].values, segs_pairs['c_lat_y'].values)
