@@ -32,7 +32,8 @@ class SARN(BaseEncoder):
         self.seg_feats = self.osm_data.seg_feats
         self.checkpoint_path = '{}/exp/snapshots/{}_SARN_best{}.pkl'.format(Config.root_dir, Config.dataset_prefix, Config.dumpfile_uniqueid)
         self.embs_path = '{}/exp/snapshots/{}_SARN_best_embs{}.pickle'.format(Config.root_dir, Config.dataset_prefix, Config.dumpfile_uniqueid)
-        
+
+        # add counters of new features here
         self.feat_emb = FeatEmbedding(self.osm_data.count_wayid_code,
                                     self.osm_data.count_segid_code,
                                     self.osm_data.count_highway_cls,
