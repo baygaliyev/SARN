@@ -31,5 +31,5 @@ class FeatEmbedding(nn.Module):
                 self.emb_lon(inputs[: , 5]),
                 self.emb_lat(inputs[: , 6]),
                 self.emb_lon(inputs[: , 7]),
-                self.emb_lat(inputs[: , 8],)
+                self.emb_lat(inputs[: , 8]),
                 self.emb_lanes(inputs[: , 9])), dim = 1)    # added by me
