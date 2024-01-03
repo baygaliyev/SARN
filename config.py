@@ -41,7 +41,7 @@ class Config:
 
 
     #=============== SARN ===============
-    sarn_epochs = 200 
+    sarn_epochs = 100    # originally was 200 
     sarn_batch_size = 128
     sarn_optimizer = 'Adam'
     sarn_learning_rated_adjusted = True
