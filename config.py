@@ -60,7 +60,7 @@ class Config:
     sarn_seg_feat_lonlatcode_dim = 32
     sarn_seg_feat_lencode_dim = 16    # added by me
 
-    sarn_seg_feat_dim = 176 
+    sarn_seg_feat_dim = 192    # sum dims of all features above
     sarn_embedding_dim = 128
     sarn_out_dim = 32
 
