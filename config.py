@@ -51,22 +51,26 @@ class Config:
     sarn_training_bad_patience = 20 # epoch
 
     sarn_seg_length_unit = 5
-    sarn_seg_radian_unit = 0.174533 # 10 degree
+    sarn_seg_radian_unit = 0.174533           # 10 degree
     sarn_seg_feat_wayidcode_dim = 32
     sarn_seg_feat_segidcode_dim = 64 
     sarn_seg_feat_highwaycode_dim = 16
     sarn_seg_feat_lengthcode_dim = 16
     sarn_seg_feat_radiancode_dim = 16
     sarn_seg_feat_lonlatcode_dim = 32
-    sarn_seg_feat_lencode_dim = 16    # added by me
-
-    sarn_seg_feat_dim = 192    # sum dims of all features above
+    sarn_seg_feat_lencode_dim = 16            # added by me
+    sarn_seg_feat_ccentralitycode_dim = 16    #new 
+    sarn_seg_feat_bcentralitycode_dim = 16    #new
+    sarn_seg_feat_hcentralitycode_dim = 16    #new
+    sarn_seg_feat_degreecode_dim = 16         #new
+    
+    sarn_seg_feat_dim = 256                   # sum dims of all features above
     sarn_embedding_dim = 128
     sarn_out_dim = 32
 
     sarn_moco_total_queue_size = 1000
-    sarn_moco_multi_queue_cellsidelen = 0 # will be set later
-    sarn_moco_each_queue_size = 0 # each single queue capacity, calculated in osm_loader.py
+    sarn_moco_multi_queue_cellsidelen = 0     # will be set later
+    sarn_moco_each_queue_size = 0             # each single queue capacity, calculated in osm_loader.py
     sarn_moco_loss_local_weight = 0.4
     sarn_moco_loss_global_weight = 1 - sarn_moco_loss_local_weight
     sarn_moco_temperature = 0.05
