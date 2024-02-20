@@ -126,6 +126,10 @@ class OSMLoader:
         self.count_s_lon_code = max(self.segments['s_lon_code'].max(), self.segments['e_lon_code'].max()) + 1
         self.count_s_lat_code = max(self.segments['s_lat_code'].max(), self.segments['e_lat_code'].max()) + 1
         self.count_lanes = self.segments['lanes'].max() + 1 # HRNR uses only
+        self.count_c_centrality_code = self.segments['c-centrality'].max() + 1 # new
+        self.count_b_centrality_code = self.segments['b-centrality'].max() + 1 # new
+        self.count_h_centrality_code = self.segments['h-centrality'].max() + 1 # new
+        self.count_degree_code = self.segments['degree'].max() + 1 # new
 
         # connected graph
         # 1. read adjacent segment graph from files
@@ -167,9 +171,12 @@ class OSMLoader:
         # segment features
         # self.seg_feats has dependency on self.segid_in_adj_segments_graph
         # , so dont move this part up
+        ############
+        # ADD NEW FEATURES HERE TOO
+        ############
         _feat_columns = ['wayid_code', 'segid_code', 'highway_cls', 'length_code', \
                         'radian_code', 's_lon_code', 's_lat_code', 'e_lon_code', 'e_lat_code', \
-                        'lanes']
+                        'lanes', 'c-centrality', 'b-centrality, 'h-centrality', 'degree']
         self.seg_feats = self.segments.reset_index().set_index('inc_id')[_feat_columns]
         self.seg_feats = torch.tensor(self.seg_feats.loc[self.segid_in_adj_segments_graph].values, dtype = torch.long, device = Config.device) # [N, n_feat_columns]
 
