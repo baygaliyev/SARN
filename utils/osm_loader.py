@@ -104,8 +104,14 @@ class OSMLoader:
         self.segments['e_lat_code'] = ((self.segments.e_lat - cellspace_finegrained.lat_min) / cellspace_finegrained.lat_unit).astype('int64')
 
         # self.segments.lanes.loc[self.segments.lanes == 'NG'] = 0
+        # replace NG values with 0
         self.segments.loc[(self.segments.lanes =='NG'), 'lanes'] = 0
+        #self.segments.loc[(self.segments.c-centrality =='NG'), 'lanes'] = 0
+        #self.segments.loc[(self.segments.b-centrality =='NG'), 'lanes'] = 0
+        #self.segments.loc[(self.segments.h-centrality =='NG'), 'lanes'] = 0
+        #self.segments.loc[(self.segments.degree =='NG'), 'lanes'] = 0
         self.segments.lanes = self.segments.lanes.astype('int32')
+        #self.segments.lanes
 
         # cellid of segment base on self.cellspace # caution, we have multiple cellspaces, ~= 1000meters
         if self.schema == 'SARN':
