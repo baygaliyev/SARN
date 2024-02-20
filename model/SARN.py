@@ -34,8 +34,6 @@ class SARN(BaseEncoder):
         self.embs_path = '{}/exp/snapshots/{}_SARN_best_embs{}.pickle'.format(Config.root_dir, Config.dataset_prefix, Config.dumpfile_uniqueid)
 
         # add counters of new features here
-        print(self.osm_data.count_s_lat_code)
-        print(self.osm_data.count_c_centrality_code)
         self.feat_emb = FeatEmbedding(self.osm_data.count_wayid_code,
                                     self.osm_data.count_segid_code,
                                     self.osm_data.count_highway_cls,
