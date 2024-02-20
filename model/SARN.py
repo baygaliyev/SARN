@@ -41,7 +41,11 @@ class SARN(BaseEncoder):
                                     self.osm_data.count_radian_code,
                                     self.osm_data.count_s_lon_code,
                                     self.osm_data.count_s_lat_code,
-                                    self.osm_data.count_lanes).to(Config.device)
+                                    self.osm_data.count_lanes,
+                                    self.osm_data.count_c_centrality_code,
+                                    self.osm_data.count_b_centrality_code,
+                                    self.osm_data.count_h_centrality_code,
+                                    self.osm_data.count_degree_code).to(Config.device)
 
         self.model = MoCoMultiQ(nfeat = Config.sarn_seg_feat_dim,
                                 nemb = Config.sarn_embedding_dim, 
