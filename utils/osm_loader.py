@@ -175,8 +175,8 @@ class OSMLoader:
         # ADD NEW FEATURES HERE TOO
         ############
         _feat_columns = ['wayid_code', 'segid_code', 'highway_cls', 'length_code', \
-                        'radian_code', 's_lon_code', 's_lat_code', 'e_lon_code', 'e_lat_code', \
-                        'lanes', 'c-centrality', 'b-centrality, 'h-centrality', 'degree']
+                        'radian_code', 's_lon_code', 's_lat_code', 'e_lon_code', 'e_lat_code',\
+                        'lanes', 'c-centrality', 'b-centrality, 'h-centrality', "degree"]
         self.seg_feats = self.segments.reset_index().set_index('inc_id')[_feat_columns]
         self.seg_feats = torch.tensor(self.seg_feats.loc[self.segid_in_adj_segments_graph].values, dtype = torch.long, device = Config.device) # [N, n_feat_columns]
 
