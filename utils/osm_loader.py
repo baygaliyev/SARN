@@ -126,8 +126,8 @@ class OSMLoader:
         self.count_s_lon_code = max(self.segments['s_lon_code'].max(), self.segments['e_lon_code'].max()) + 1
         self.count_s_lat_code = max(self.segments['s_lat_code'].max(), self.segments['e_lat_code'].max()) + 1
         self.count_lanes = self.segments['lanes'].max() + 1 # HRNR uses only
-        print(type(self.segments['lanes'].max()))
-        print(type(self.segments['c-centrality'].max()))
+        print(self.segments['lanes'].max())
+        print(self.segments['c-centrality'].max())
         self.count_c_centrality_code = self.segments['c-centrality'].max() + 1 # new
         self.count_b_centrality_code = self.segments['b-centrality'].max() + 1 # new
         self.count_h_centrality_code = self.segments['h-centrality'].max() + 1 # new
