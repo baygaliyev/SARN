@@ -119,7 +119,7 @@ class OSMLoader:
         #self.segments.loc[(self.segments.h-centrality =='NG'), 'lanes'] = 0
         #self.segments.loc[(self.segments.degree =='NG'), 'lanes'] = 0
         self.segments.lanes = self.segments.lanes.astype('int32')
-        self.degree.lanes = self.segments.degree.astype('int32')    # NEW
+        self.segments.degree = self.segments.degree.astype('int32')    # NEW
         #self.segments.lanes
 
         # cellid of segment base on self.cellspace # caution, we have multiple cellspaces, ~= 1000meters
