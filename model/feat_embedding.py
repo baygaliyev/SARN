@@ -29,6 +29,7 @@ class FeatEmbedding(nn.Module):
         self.emb_h_centrality = nn.Embedding(nh_centrality_code, Config.sarn_seg_feat_hcentralitycode_dim)  #16, new
         print()
         print(ndegree_code, type(ndegree_code))
+        print()
         self.emb_degree = nn.Embedding(ndegree_code, Config.sarn_seg_feat_degreecode_dim)                 #16, new
                 
     # inputs = [N, nfeat]
