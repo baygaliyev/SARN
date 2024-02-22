@@ -88,10 +88,17 @@ class OSMLoader:
 
         _seg_codes, _ = pd.factorize(self.segments.inc_id)
         self.segments['segid_code'] = _seg_codes
-
+        
+        #####################
+        ### FLOAT NUMBERS SMALLER THAN 1 CONVERTED INTO INTEGERS LARGER THAN 1
+        ######################
         self.segments['length_code'] = (self.segments.length / Config.sarn_seg_length_unit).astype('int64')
 
         self.segments['radian_code'] = (self.segments.radian / Config.sarn_seg_radian_unit).astype('int64')
+
+        self.segments['c_centrality_code'] = (self.segments.c_centrality * 10000000).astype('int64')    # NEW
+        self.segments['b_centrality_code'] = (self.segments.b_centrality * 10000000).astype('int64')    # NEW
+        self.segments['h_centrality_code'] = (self.segments.h_centrality * 10000000).astype('int64')    # NEW
 
         # add lat and lon code 
         _lon_unit = 50 * Config.dataset_lon2Euc_unit # 50 meters
@@ -134,9 +141,9 @@ class OSMLoader:
         self.count_lanes = self.segments['lanes'].max() + 1 # HRNR uses only
         #print(self.segments['lanes'].max())
         #print(self.segments['c-centrality'].max())
-        self.count_c_centrality_code = self.segments['c-centrality'].max() + 1 # new
-        self.count_b_centrality_code = self.segments['b-centrality'].max() + 1 # new
-        self.count_h_centrality_code = self.segments['h-centrality'].max() + 1 # new
+        self.count_c_centrality_code = self.segments['c_centrality_code'].max() + 1 # new
+        self.count_b_centrality_code = self.segments['b_centrality_code'].max() + 1 # new
+        self.count_h_centrality_code = self.segments['h_centrality_code'].max() + 1 # new
         self.count_degree_code = self.segments['degree'].max() + 1 # new
 
         # connected graph
@@ -183,7 +190,7 @@ class OSMLoader:
         # ADD NEW FEATURES HERE TOO
         ############
         _feat_columns = ['wayid_code', 'segid_code', 'highway_cls', 'length_code', \
-                        'radian_code', 's_lon_code', 's_lat_code', 'e_lon_code', 'e_lat_code', 'lanes', 'c-centrality', 'b-centrality', 'h-centrality', 'degree']
+                        'radian_code', 's_lon_code', 's_lat_code', 'e_lon_code', 'e_lat_code', 'lanes', 'c_centrality_code', 'b_centrality_code', 'h_centrality_code', 'degree']
         self.seg_feats = self.segments.reset_index().set_index('inc_id')[_feat_columns]
         self.seg_feats = torch.tensor(self.seg_feats.loc[self.segid_in_adj_segments_graph].values, dtype = torch.long, device = Config.device) # [N, n_feat_columns]
 
