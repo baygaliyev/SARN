@@ -29,7 +29,7 @@ class FeatEmbedding(nn.Module):
         self.emb_c_centrality = nn.Embedding(nc_centrality_code, Config.sarn_seg_feat_ccentralitycode_dim)  #16, new
         self.emb_b_centrality = nn.Embedding(nb_centrality_code, Config.sarn_seg_feat_bcentralitycode_dim)  #16, new
         self.emb_h_centrality = nn.Embedding(nh_centrality_code, Config.sarn_seg_feat_hcentralitycode_dim)  #16, new
-        self.emb_degree = nn.Embedding(ndegree_code, Config.sarn_seg_feat_degree_dim)                 #16, new
+        self.emb_degree = nn.Embedding(ndegree_code, Config.sarn_seg_feat_degreecode_dim)                 #16, new
                 
     # inputs = [N, nfeat]
     def forward(self, inputs):
