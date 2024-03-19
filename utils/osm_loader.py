@@ -98,8 +98,8 @@ class OSMLoader:
 
         self.segments['c_centrality_code'] = (self.segments.c_centrality * 10000000).astype('int64')    # NEW
         self.segments['b_centrality_code'] = (self.segments.b_centrality * 10000000).astype('int64')    # NEW
-        self.segments['h_centrality_code'] = (self.segments.h_centrality * 10000000).astype('int64')    # NEW
-        #self.segments['degree_code'] = (self.segments.degree * 1).astype('int64')    # NEW
+        self.segments['h_centrality_code'] = (round(self.segments.h_centrality)).astype('int64')        # NEW
+        #self.segments['degree_code'] = (self.segments.degree * 1).astype('int64')                      # NEW
 
         # add lat and lon code 
         _lon_unit = 50 * Config.dataset_lon2Euc_unit # 50 meters
