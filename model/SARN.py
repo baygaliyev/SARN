@@ -45,7 +45,13 @@ class SARN(BaseEncoder):
                                     self.osm_data.count_c_centrality_code,
                                     self.osm_data.count_b_centrality_code,
                                     self.osm_data.count_h_centrality_code,
-                                    self.osm_data.count_degree_code).to(Config.device)
+                                    self.osm_data.count_degree_code,
+                                    self.osm_data.count_cultural,
+                                    self.osm_data.count_education,
+                                    self.osm_data.count_food,
+                                    self.osm_data.count_health,
+                                    self.osm_data.count_service,
+                                    self.osm_data.count_transportation,).to(Config.device)    # last features added by me
 
         self.model = MoCoMultiQ(nfeat = Config.sarn_seg_feat_dim,
                                 nemb = Config.sarn_embedding_dim, 
