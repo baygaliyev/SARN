@@ -63,8 +63,14 @@ class Config:
     sarn_seg_feat_bcentralitycode_dim = 16    #new
     sarn_seg_feat_hcentralitycode_dim = 16    #new
     sarn_seg_feat_degreecode_dim = 16         #new
+    sarn_seg_feat_cultural_dim = 16           #new
+    sarn_seg_feat_education_dim = 16          #new
+    sarn_seg_feat_food_dim = 16               #new
+    sarn_seg_feat_health_dim = 16             #new
+    sarn_seg_feat_service_dim = 16            #new
+    sarn_seg_feat_transportation_dim = 16     #new
     
-    sarn_seg_feat_dim = 256                   # sum dims of all features above
+    sarn_seg_feat_dim = 352                   # sum dims of all features above
     sarn_embedding_dim = 128
     sarn_out_dim = 32
 
@@ -180,6 +186,7 @@ class Config:
             cls.spd_max_spd = 10133
             if cls.sarn_moco_multi_queue_cellsidelen == 0:
                 cls.sarn_moco_multi_queue_cellsidelen = 600
+        # ADDED BY ME
         elif 'PI' == cls.dataset:
             cls.dataset_prefix = 'OSM_Pisa_raw'
             cls.trajsimi_prefix = 'sfcab_L_len60_10k_mm_from_60k' # trajsimi test
