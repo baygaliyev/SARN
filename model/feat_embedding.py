@@ -27,6 +27,7 @@ class FeatEmbedding(nn.Module):
         self.emb_lon = nn.Embedding(nlon_code, Config.sarn_seg_feat_lonlatcode_dim)          #32
         self.emb_lat = nn.Embedding(nlat_code, Config.sarn_seg_feat_lonlatcode_dim)          #32
         self.emb_lanes = nn.Embedding(nlanes_code, Config.sarn_seg_feat_lencode_dim)         #16, you can also directly write the number
+        
         self.emb_c_centrality = nn.Embedding(nc_centrality_code, Config.sarn_seg_feat_ccentralitycode_dim)   #16, new
         self.emb_b_centrality = nn.Embedding(nb_centrality_code, Config.sarn_seg_feat_bcentralitycode_dim)   #16, new
         self.emb_h_centrality = nn.Embedding(nh_centrality_code, Config.sarn_seg_feat_hcentralitycode_dim)   #16, new
