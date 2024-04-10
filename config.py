@@ -59,16 +59,16 @@ class Config:
     sarn_seg_feat_radiancode_dim = 16
     sarn_seg_feat_lonlatcode_dim = 32
     sarn_seg_feat_lencode_dim = 16            # added by me
-    sarn_seg_feat_ccentralitycode_dim = 16    #new 
-    sarn_seg_feat_bcentralitycode_dim = 16    #new
-    sarn_seg_feat_hcentralitycode_dim = 16    #new
-    sarn_seg_feat_degreecode_dim = 16         #new
-    sarn_seg_feat_cultural_dim = 16           #new
-    sarn_seg_feat_education_dim = 16          #new
-    sarn_seg_feat_food_dim = 16               #new
-    sarn_seg_feat_health_dim = 16             #new
-    sarn_seg_feat_service_dim = 16            #new
-    sarn_seg_feat_transportation_dim = 16     #new
+    sarn_seg_feat_ccentralitycode_dim = 16    # new 
+    sarn_seg_feat_bcentralitycode_dim = 16    # new
+    sarn_seg_feat_hcentralitycode_dim = 16    # new
+    sarn_seg_feat_degreecode_dim = 16         # new
+    sarn_seg_feat_cultural_dim = 16           # new
+    sarn_seg_feat_education_dim = 16          # new
+    sarn_seg_feat_food_dim = 16               # new
+    sarn_seg_feat_health_dim = 16             # new
+    sarn_seg_feat_service_dim = 16            # new
+    sarn_seg_feat_transportation_dim = 16     # new
     
     sarn_seg_feat_dim = 352                   # sum dims of all features above
     sarn_embedding_dim = 128
