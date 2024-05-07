@@ -41,13 +41,13 @@ class Config:
 
 
     #=============== SARN ===============
-    sarn_epochs = 100    # originally was 200 
+    sarn_epochs = 200    # originally was 200 
     sarn_batch_size = 128
     sarn_optimizer = 'Adam'
     sarn_learning_rated_adjusted = True
-    sarn_learning_rate = 0.005
+    sarn_learning_rate = 0.0005    # originally 0.005
     sarn_learning_momentum = 0.999
-    sarn_learning_weight_decay = 0.0001 #1e-4
+    # sarn_learning_weight_decay = 0.0001 #1e-4
     sarn_training_bad_patience = 20 # epoch
 
     sarn_seg_length_unit = 5
