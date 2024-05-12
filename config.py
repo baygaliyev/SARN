@@ -190,8 +190,8 @@ class Config:
         elif 'PI' == cls.dataset:
             cls.dataset_prefix = 'OSM_Pisa_raw'
             cls.trajsimi_prefix = 'sfcab_L_len60_10k_mm_from_60k' # trajsimi test
-            cls.dataset_lon2Euc_unit = 0.000012337061241 # calculated based on sf and bj
-            cls.dataset_lat2Euc_unit = 0.000008992805755
+            cls.dataset_lon2Euc_unit = 0.000013357061241 # calculated based on sf and bj 'lon_unit': 0.01335000000, 'lat_unit': 0.0184800000
+            cls.dataset_lat2Euc_unit = 0.000018482805755
             cls.trajdata_timestamp_offset = 1211018400   # no idea
             cls.spd_max_spd = 10133                      # no idea
             if cls.sarn_moco_multi_queue_cellsidelen == 0:  # no idea
