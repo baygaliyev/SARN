@@ -62,8 +62,8 @@ lonlat_units = {
     'OSM_Chengdu_2thRings_raw': {'lon_unit': 0.010507143, 'lat_unit': 0.008982567},
     'OSM_Beijing_2thRings_raw': {'lon_unit': 0.01172332943, 'lat_unit': 0.00899280575},
     'OSM_SanFrancisco_downtown_raw': {'lon_unit': 0.00568828214, 'lat_unit': 0.004496402877},
-    'OSM_Pisa_raw': {'lon_unit': 0.01335000000, 'lat_unit': 0.0184800000}
-} # what is this?
+    'OSM_Pisa_raw': {'lon_unit': 0.001335000000, 'lat_unit': 0.00184800000}
+} # what is this? 'lon_unit': 0.01335000000, 'lat_unit': 0.0184800000
 
 lon_unit = 0.0
 lat_unit = 0.0
