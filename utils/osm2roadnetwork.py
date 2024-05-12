@@ -54,9 +54,9 @@ rings_ranges = {
             'lon_lo': 116.3401000, 'lon_hi': 116.4425000},
     'OSM_SanFrancisco_downtown_raw': {'lat_lo': 37.7617000, 'lat_hi': 37.8131000, \
             'lon_lo': -122.4450000, 'lon_hi': -122.3803000},
-    'OSM_Pisa_raw': {'lat_lo': 43.6061000, 'lat_hi': 43.7396000, \
-            'lon_lo': 10.2683000, 'lon_hi': 10.4531000},
-}
+    'OSM_Pisa_raw': {'lat_lo': 43.7019000, 'lat_hi': 43.7357000, \
+            'lon_lo': 10.3659000, 'lon_hi': 10.4224000},
+} # this line SHOULD BE ADJUSTED
 
 lonlat_units = {
     'OSM_Chengdu_2thRings_raw': {'lon_unit': 0.010507143, 'lat_unit': 0.008982567},
