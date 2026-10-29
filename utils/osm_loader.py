@@ -159,7 +159,6 @@ class OSMLoader:
         self.count_health = self.segments['health'].max() + 1       # new
         self.count_service = self.segments['service'].max() + 1     # new
         self.count_transportation = self.segments['transportation'].max() + 1 # new
-        print(self.segments['transportation'].max())
 
         # connected graph
         # 1. read adjacent segment graph from files

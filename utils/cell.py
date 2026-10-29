@@ -55,9 +55,6 @@ class CellSpace:
 
 
     def get_cell_id_by_point(self, lon, lat):
-        print(self.lon_min, lon, self.lon_max)
-        print(self.lat_min, lat, self.lat_max)
-
         assert self.lon_min <= lon <= self.lon_max \
                 and self.lat_min <= lat <= self.lat_max
         

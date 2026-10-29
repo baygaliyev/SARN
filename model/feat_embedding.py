@@ -39,9 +39,6 @@ class FeatEmbedding(nn.Module):
         self.emb_health = nn.Embedding(nhealth_code, Config.sarn_seg_feat_health_dim)          #16, new
         self.emb_service = nn.Embedding(nservice_code, Config.sarn_seg_feat_service_dim)       #16, new
         self.emb_transportation = nn.Embedding(ntransportation_code, Config.sarn_seg_feat_transportation_dim) #16, new
-        print()
-        print(ntransportation_code, type(ntransportation_code))
-        print()
                 
     # inputs = [N, nfeat]
     def forward(self, inputs):
