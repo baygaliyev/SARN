@@ -2,15 +2,20 @@ import time
 import math
 import numpy as np
 from itertools import tee
-from pynvml import *
+try:
+    from pynvml import *
+    _HAS_NVML = True
+except Exception:
+    _HAS_NVML = False
 import os
 import psutil
 from sklearn.metrics import f1_score, precision_score, recall_score, accuracy_score, roc_auc_score
 from sklearn.preprocessing import label_binarize
 from datetime import datetime, timezone, timedelta
 
-# initializing here!!
-nvmlInit() 
+# initializing here!! (patched: NVML is optional -- CPU/Mac has no NVIDIA GPU)
+if _HAS_NVML:
+    nvmlInit()
 
 def mean(x):
     if x == []:
@@ -209,10 +214,14 @@ timer = Timer()
 
 class GPUInfo:
 
-    _h = nvmlDeviceGetHandleByIndex(0)
+    _h = None
 
     @classmethod
     def mem(cls):
+        if not _HAS_NVML:
+            return 0, 0
+        if cls._h is None:
+            cls._h = nvmlDeviceGetHandleByIndex(0)
         info = nvmlDeviceGetMemoryInfo(cls._h)
         return info.used // 1048576, info.total // 1048576 # in MB
 

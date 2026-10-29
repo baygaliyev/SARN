@@ -196,6 +196,14 @@ class Config:
             cls.spd_max_spd = 10133                      # no idea
             if cls.sarn_moco_multi_queue_cellsidelen == 0:  # no idea
                 cls.sarn_moco_multi_queue_cellsidelen = 600 # no idea
+        # ADDED: Rome
+        elif 'RM' == cls.dataset:
+            cls.dataset_prefix = 'OSM_Rome_raw'
+            cls.dataset_lon2Euc_unit = 0.000012069          # 1 m at lat 41.9
+            cls.dataset_lat2Euc_unit = 0.000008992805755
+            cls.spd_max_spd = 0
+            if cls.sarn_moco_multi_queue_cellsidelen == 0:
+                cls.sarn_moco_multi_queue_cellsidelen = 1000
 
 
         cls.dataset_path = cls.root_dir + '/data/' + cls.dataset_prefix
